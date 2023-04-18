@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h1{
+  font-size: 18px !important;
+  text-align: left !important;
+  color: black !important;
+}
+
+.img-fluid{
+  height: 200px !important;
+}
+.bigimg{
+  height: 400px !important;
+}
+p{
+  text-align: left !important;
+}
+h2{
+  font-size: 25px !important;
+  font-weight: bold !important;
+}
+.btn{
+  width: 200px !important;
+}
+li{
+  color: white !important;
+}
