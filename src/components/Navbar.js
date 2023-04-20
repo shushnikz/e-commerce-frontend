@@ -14,7 +14,7 @@ function Navbar() {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Let's Shop</a>
+                    <a className="navbar-brand" href="/">Let's Shop</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -28,7 +28,7 @@ function Navbar() {
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li><a className="dropdown-item" href="/profile">Profile</a></li>
                                         <li><a className="dropdown-item" href="/orders">Orders</a></li>
-                                        <li><a className="dropdown-item" onClick={() => { dispatch(logoutUser()) }}>Logout <i class="fas fa-sign-out-alt"></i></a></li>
+                                        <li><a className="dropdown-item" onClick={() => { dispatch(logoutUser()) }}>Logout <i className="fas fa-sign-out-alt"></i></a></li>
                                     </ul>
                                 </div>
                             ) : (

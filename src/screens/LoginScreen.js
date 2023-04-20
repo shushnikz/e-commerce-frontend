@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../actions/userActions';
+import Error from '../components/Error';
+import Loader from '../components/Loader';
 
 function LoginScreen() {
     const loginreducer = useSelector(state => state.loginReducer)
@@ -42,8 +44,8 @@ function LoginScreen() {
                         <h2 className="text-center m-3" style={{ display: "inline" }}>LOGIN</h2>
                         <i style={{ fontSize: '25px' }} className="fa fa-sign-in" aria-hidden="true"></i>
 
-                        {error && (<h1>Something went wrong</h1>)}
-                        {loading && (<h1>Loading...</h1>)}
+                        {error && (<Error error="Something went Wrong..." />)}
+                        {loading && (<Loader />)}
 
                         <form onSubmit={login}>
 
@@ -57,7 +59,7 @@ function LoginScreen() {
                                     setemail(e.target.value);
                                 }}
                             />
-
+                            <br />
                             <input
                                 type="password"
                                 placeholder="password"
@@ -68,8 +70,7 @@ function LoginScreen() {
                                     setpassword(e.target.value);
                                 }}
                             />
-
-
+                            <br />
 
                             <div className="text-right">
                                 <button type='submit' className="btn btn-dark mt-3">

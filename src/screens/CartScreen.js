@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, deleteFromCart } from '../actions/cartActions'
+import Checkout from '../components/Checkout'
 
 function CartScreen() {
     const cartreducerstate = useSelector((state) => state.cartReducer)
@@ -11,7 +12,7 @@ function CartScreen() {
     var subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0)
     return (
         <div>
-            <h1>Cart Screen</h1>
+
             <h1>{cartItems.length}</h1>
             <div className="row mt-3 justify-content-center">
 
@@ -68,9 +69,7 @@ function CartScreen() {
                     <hr />
 
 
-                    <div className='text-center'>
-                        <button className='btn btn-dark'>Pay Now</button>
-                    </div>
+                    <Checkout amount={subtotal} />
 
 
                 </div>

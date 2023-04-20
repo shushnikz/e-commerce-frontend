@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getProductById } from '../actions/productAction'
 import { addToCart } from '../actions/cartActions'
+import Loader from '../components/Loader'
+import Error from '../components/Error'
 
 function ProductDesc() {
 
@@ -25,7 +27,7 @@ function ProductDesc() {
     }, [])
     return (
         <div>
-            {loading ? (<h1>Loading...</h1>) : error ? (<h1>Something went wrong</h1>) : (
+            {loading ? (<Loader />) : error ? (<Error error="Something went Wrong..." />) : (
                 <div className='row mt-5'>
                     <div className='col-md-6'>
                         <div className='card p-2 m-3'>

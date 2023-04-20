@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { registerNewUser } from '../actions/userActions';
+import Success from '../components/Success';
+import Error from '../components/Error';
+import Loader from '../components/Loader';
 
 function RegisterScreen() {
 
@@ -35,10 +38,13 @@ function RegisterScreen() {
     }
     return (
         <div>
-            <div className='row justify-content-center m-3'>
-                <div className='col-md-5 card p-3 shadow p-3 mb-5 bg-white rounded' style={{ marginTop: "100px" }}>
+            <div className='row justify-content-center m-1'>
+                <div className='col-md-5 card p-3 shadow p-3 mb-2 bg-white rounded' style={{ marginTop: "100px" }}>
                     <div className='div'>
                         <h2 className="text-center m-3">Register Screen</h2>
+                        {error && (<Error error="Something went Wrong..." />)}
+                        {loading && (<Loader />)}
+                        {success && (<Success success="You have registered Successfully, Click on login to continue" />)}
                         <form onSubmit={register}>
                             <input
                                 type="text"
@@ -51,6 +57,7 @@ function RegisterScreen() {
 
                                 }}
                             />
+                            <br />
                             <input
                                 type="text"
                                 placeholder="email"
@@ -61,7 +68,7 @@ function RegisterScreen() {
                                     setemail(e.target.value);
                                 }}
                             />
-
+                            <br />
                             <input
                                 type="password"
                                 placeholder="password"
@@ -72,7 +79,7 @@ function RegisterScreen() {
                                     setpassword(e.target.value);
                                 }}
                             />
-
+                            <br />
                             <input
                                 type="password"
                                 placeholder="confirm password"
@@ -83,7 +90,7 @@ function RegisterScreen() {
                                     setcpassword(e.target.value);
                                 }}
                             />
-
+                            <br />
                             <div className="text-right">
                                 <button type='submit' className="btn btn-dark mt-3">
                                     REGISTER
